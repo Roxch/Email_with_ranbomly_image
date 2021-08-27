@@ -12,6 +12,14 @@ def Imagen():
 	#All images are listed.
 	ListOfFolder = os.listdir('tokyocyb0rg')
 
+	i = 0
+	while i < len(ListOfFolder) :
+		if ListOfFolder[i].endswith(('.jpg', '.jpeg', '.gif', '.png')) == False :
+			ListOfFolder.remove(folders[i])
+            
+		else :
+			i += 1
+
 	#Get the number of files with Len (only tells me the items in listFolder).
 	NumberOfFiles = len(ListOfFolder)
 	NumberOfFiles += 1
@@ -28,9 +36,11 @@ def NumRanCode():
 	return(Code)
 
 #Sender = Emisor | Receiver = Receptor
+
 UserSender = input('Your Email : ')
 PASSWORD = getpass.getpass('password plis : ')
 UserReceiver = input('Email of your friend : ')
+
 
 mens_email ='''<!DOCTYPE html>
 <html>
